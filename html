@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sostenibilidad | Reducir • Reusar • Reparar • Reciclar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cooper+Hewitt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="#" class="logo" id="logo">ProPlástico</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acciones">Las 4 R's</a></li>
+                <li><a href="#reciclaje">Puntos de Reciclaje</a></li>
+                <li><a href="#estadisticas">Impacto</a></li>
+                <li><a href="#accion">Únete</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Plástico con propósito</h1>
+            <p class="hero-subtitle">Transformamos residuos en oportunidades para todxs. Del descarte al impacto social.</p>
+            <div class="hero-cta">
+                <a href="#acciones" class="btn">Descubre Cómo</a>
+                <button id="aiAssistantBtn" class="btn ai-btn">Asistente IA 🌱</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 R'S SECTION -->
+    <section class="four-rs animate-on-scroll" id="acciones">
+        <h2 class="section-title">Las 4 R's de la Sostenibilidad</h2>
+        <p class="section-subtitle">Pequeños cambios en nuestros hábitos diarios pueden generar un impacto significativo en la salud de nuestro planeta</p>
+        
+        <div class="rs-grid">
+            <div class="r-card animate-on-scroll">
+                <div class="r-icon">🔽</div>
+                <h3>Reducir</h3>
+                <p>Disminuye el consumo de recursos y energía. Cada producto no comprado es residuo evitado y recursos naturales preservados para las futuras generaciones.</p>
+            </div>
+            <div class="r-card animate-on-scroll">
+                <div class="r-icon">🔄</div>
+                <h3>Reusar</h3>
+                <p>Dale una segunda vida a los objetos antes de desecharlos. La creatividad puede transformar lo viejo en algo útil y hermoso.</p>
+            </div>
+            <div class="r-card animate-on-scroll">
+                <div class="r-icon">🔧</div>
+                <h3>Reparar</h3>
+                <p>Arregla en lugar de reemplazar. Extender la vida útil de los productos reduce significativamente nuestro impacto ambiental.</p>
+            </div>
+            <div class="r-card animate-on-scroll">
+                <div class="r-icon">♻️</div>
+                <h3>Reciclar</h3>
+                <p>Transforma los residuos en nuevos productos útiles. Es el último paso de un ciclo de vida verdaderamente sostenible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECYCLING POINTS SECTION -->
+    <section class="recycling-points animate-on-scroll" id="reciclaje">
+        <h2 class="section-title">Puntos de Reciclaje</h2>
+        <p class="section-subtitle">Encuentra el centro de reciclaje más cercano a tu ubicación</p>
+        
+        <div class="recycling-content">
+            <div class="map-container">
+                <div id="recyclingMap"></div>
+            </div>
+            
+            <div class="recycling-info">
+                <div class="ong-card">
+                    <h3>ONG Destacada</h3>
+                    <div class="ong-content">
+                        <img src="https://fundaciongarrahan.org.ar/wp-content/uploads/2023/07/cropped-isologo-fg-1-192x192.png" alt="Fundación Garrahan">
+                        <div>
+                            <h4>Fundación Garrahan</h4>
+                            <p>Programa de reciclado de tapitas, papeles y llaves para ayudar al hospital infantil.</p>
+                            <a href="https://fundaciongarrahan.org.ar/reciclado-y-medioambiente/" target="_blank" class="btn">Visitar Sitio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resources-links">
+                    <h3>Más Recursos</h3>
+                    <ul>
+                        <li><a href="https://www.ambiente.gba.gob.ar/contenido/destinos_sustentables_1" target="_blank">Puntos de reciclaje en Provincia de Buenos Aires</a></li>
+                        <li><a href="https://buenosaires.gob.ar/noticias/se-colocaron-nuevos-puntos-verdes-para-que-los-vecinos-puedan-dejar-sus-reciclables" target="_blank">Puntos Verdes en CABA</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section class="form-section animate-on-scroll">
+        <div class="form-container">
+            <h2>Recibí Guías Educativas</h2>
+            <p>Completá el formulario para recibir material educativo, plantillas y orientación sobre reciclaje.</p>
+            
+            <form id="educationForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Celular">
+                </div>
+                <div class="form-group">
+                    <textarea id="question" name="question" placeholder="¿Qué información te interesa recibir?" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats animate-on-scroll" id="estadisticas">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Nuestro Impacto Juntos</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-count="85">0</span>
+                <span class="stat-label">% Menos Residuos</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="2500">0</span>
+                <span class="stat-label">Familias Participando</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="150">0</span>
+                <span class="stat-label">Toneladas Recicladas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="95">0</span>
+                <span class="stat-label">% Satisfacción</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta animate-on-scroll" id="accion">
+        <h2>¿Listo para el Cambio?</h2>
+        <p>Únete a nuestra comunidad y comienza tu viaje hacia un estilo de vida más sostenible y consciente</p>
+        <a href="#educationForm" class="btn">Comenzar Ahora</a>
+    </section>
+
+    <!-- AI ASSISTANT MODAL -->
+    <div id="aiModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Asistente de Sostenibilidad</h2>
+            <div class="ai-chat-container">
+                <div id="aiChat" class="ai-chat"></div>
+                <div class="ai-input">
+                    <input type="text" id="aiMessage" placeholder="Pregúntame sobre reciclaje, sostenibilidad...">
+                    <button id="sendAiMessage">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ProPlástico</h3>
+                <p>Construyendo un futuro sostenible a través de acciones conscientes y educación ambiental para toda la comunidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <p><a href="#">Guías de Sostenibilidad</a></p>
+                <p><a href="#">Calculadora de Huella</a></p>
+                <p><a href="#">Talleres Online</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Comunidad</h3>
+                <p><a href="#">Blog</a></p>
+                <p><a href="#">Testimonios</a></p>
+                <p><a href="#">Eventos Locales</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>info@proplastico.com</p>
+                <p>+54 11 1234-5678</p>
+                <p>Buenos Aires, Argentina</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ProPlástico. Construyendo un futuro sostenible juntos. 🌱</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
