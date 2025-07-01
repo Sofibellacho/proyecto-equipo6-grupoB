@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sostenibilidad | Reducir • Reusar • Reparar • Reciclar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cooper+Hewitt:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,10 +14,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cooper Hewitt', sans-serif;
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
+            background-color: #f5f5f5;
         }
 
         /* HEADER */
@@ -29,6 +31,7 @@
             z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
+            border-bottom: 3px solid #6c851b;
         }
 
         nav {
@@ -43,13 +46,15 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #2d5a27;
+            color: #6c851b;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .logo:hover {
-            color: #4a9b3e;
+            color: #ffbd59;
         }
 
         .nav-links {
@@ -64,10 +69,11 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+            font-family: 'Cooper Hewitt', sans-serif;
         }
 
         .nav-links a:hover {
-            color: #4a9b3e;
+            color: #6c851b;
         }
 
         .nav-links a::after {
@@ -77,7 +83,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: #4a9b3e;
+            background-color: #ffbd59;
             transition: width 0.3s ease;
         }
 
@@ -94,22 +100,23 @@
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background: #333;
+            background: #6c851b;
             margin: 3px 0;
             transition: 0.3s;
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION - Estilo Collage */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #D7EBBE;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: #333;
             position: relative;
             overflow: hidden;
+            padding: 2rem;
         }
 
         .hero::before {
@@ -119,7 +126,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(108,133,27,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(108,133,27,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(108,133,27,0.1)"/><circle cx="10" cy="60" r="1" fill="rgba(108,133,27,0.1)"/><circle cx="90" cy="40" r="1" fill="rgba(108,133,27,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             opacity: 0.3;
         }
 
@@ -129,52 +136,80 @@
             animation: fadeInUp 1s ease;
             position: relative;
             z-index: 2;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 10px 10px 0 #6c851b;
+            border: 3px solid #333;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #6c851b;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .hero-subtitle {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #555;
         }
 
         .btn {
             display: inline-block;
-            background: #4a9b3e;
+            background: #6c851b;
             color: white;
             padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            border: 2px solid #333;
+            box-shadow: 5px 5px 0 #333;
+            font-family: 'Cooper Hewitt', sans-serif;
         }
 
         .btn:hover {
-            background: #2d5a27;
+            background: #ffbd59;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 8px 8px 0 #333;
+            color: #333;
         }
 
-        /* 4 R'S SECTION */
+        /* 4 R'S SECTION - Estilo Collage */
         .four-rs {
             padding: 5rem 2rem;
             background: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .four-rs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23AEE66A" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.2;
+            z-index: 0;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2d5a27;
+            color: #6c851b;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
         }
 
         .section-subtitle {
@@ -183,6 +218,8 @@
             color: #666;
             max-width: 600px;
             margin: 0 auto 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .rs-grid {
@@ -191,6 +228,8 @@
             gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .r-card {
@@ -198,24 +237,40 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 8px 8px 0 #EBD1B8;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .r-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #AEE66A, #ffbd59, #6c851b);
         }
 
         .r-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 12px 12px 0 #EBD1B8;
         }
 
         .r-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: #6c851b;
         }
 
         .r-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #2d5a27;
+            color: #6c851b;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .r-card p {
@@ -226,9 +281,12 @@
         /* STATS SECTION */
         .stats {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, #2d5a27 0%, #4a9b3e 100%);
+            background: linear-gradient(135deg, #6c851b 0%, #AEE66A 100%);
             color: white;
             text-align: center;
+            position: relative;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            margin: 3rem 0;
         }
 
         .stats-grid {
@@ -243,12 +301,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
+            font-family: 'Anton', sans-serif;
         }
 
         .stat-label {
@@ -261,12 +325,15 @@
             padding: 5rem 2rem;
             background: #f8f9fa;
             text-align: center;
+            position: relative;
         }
 
         .cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2d5a27;
+            color: #6c851b;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .cta p {
@@ -282,6 +349,7 @@
         .mapa-section {
             padding: 5rem 2rem;
             background: white;
+            position: relative;
         }
 
         .puntos-info {
@@ -297,13 +365,17 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            border-left: 4px solid #4a9b3e;
+            border-left: 4px solid #6c851b;
+            box-shadow: 5px 5px 0 #D7EBBE;
+            border: 2px solid #333;
         }
 
         .info-card h3 {
-            color: #2d5a27;
+            color: #6c851b;
             margin-bottom: 1rem;
             font-size: 1.3rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .info-card p {
@@ -317,7 +389,8 @@
             margin: 0 auto 3rem;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 10px 10px 0 #EBD1B8;
+            border: 2px solid #333;
         }
 
         .puntos-lista {
@@ -327,9 +400,11 @@
 
         .puntos-lista h3 {
             text-align: center;
-            color: #2d5a27;
+            color: #6c851b;
             font-size: 1.8rem;
             margin-bottom: 2rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .comunas-grid {
@@ -342,21 +417,25 @@
             background: #f8f9fa;
             padding: 1.5rem;
             border-radius: 10px;
-            border-top: 3px solid #4a9b3e;
+            border-top: 3px solid #6c851b;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 5px 5px 0 #D7EBBE;
+            border: 2px solid #333;
         }
 
         .comuna-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px) rotate(-1deg);
+            box-shadow: 8px 8px 0 #D7EBBE;
         }
 
         .comuna-card h4 {
-            color: #2d5a27;
+            color: #6c851b;
             margin-bottom: 1rem;
             font-size: 1.2rem;
             border-bottom: 1px solid #ddd;
             padding-bottom: 0.5rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .comuna-card ul {
@@ -376,7 +455,7 @@
         }
 
         .especial {
-            background: #4a9b3e;
+            background: #6c851b;
             color: white;
             padding: 0.2rem 0.5rem;
             border-radius: 15px;
@@ -397,6 +476,9 @@
         .form-section {
             padding: 5rem 2rem;
             background: #f8f9fa;
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            margin: 3rem 0;
         }
 
         .contact-form {
@@ -410,16 +492,20 @@
         .contact-form input,
         .contact-form textarea {
             padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 10px;
+            border: 2px solid #333;
+            border-radius: 8px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            background: white;
+            font-family: 'Cooper Hewitt', sans-serif;
+            box-shadow: 3px 3px 0 #D7EBBE;
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: #4a9b3e;
+            border-color: #6c851b;
+            box-shadow: 5px 5px 0 #AEE66A;
         }
 
         .contact-form textarea {
@@ -440,13 +526,15 @@
             background: #f8f9fa;
             padding: 3rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 10px 10px 0 #EBD1B8;
+            border: 2px solid #333;
         }
 
         .ong-logo {
             max-width: 200px;
             height: auto;
             margin-bottom: 2rem;
+            filter: drop-shadow(5px 5px 0 #D7EBBE);
         }
 
         .ong-card p {
@@ -458,9 +546,10 @@
 
         /* FOOTER */
         footer {
-            background: #2d5a27;
+            background: #6c851b;
             color: white;
             padding: 3rem 2rem 1rem;
+            position: relative;
         }
 
         .footer-content {
@@ -473,7 +562,9 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: #4a9b3e;
+            color: #ffbd59;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
         }
 
         .footer-section p {
@@ -488,27 +579,147 @@
         }
 
         .footer-section a:hover {
-            color: #4a9b3e;
+            color: #ffbd59;
         }
 
         .footer-bottom {
             text-align: center;
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid #4a9b3e;
+            border-top: 1px solid #ffbd59;
             opacity: 0.8;
         }
 
-        /* BOT IA */
+        /* CHAT IA */
+        #chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 3px solid #6c851b;
+            overflow: hidden;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 9999;
+            display: none;
+        }
+
+        #chat-container.visible {
+            transform: translateY(0);
+            opacity: 1;
+            display: block;
+        }
+
+        .chat-header {
+            background: #6c851b;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 1rem;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background: #EBD1B8;
+            align-self: flex-start;
+            border-top-left-radius: 0;
+            margin-right: auto;
+        }
+
+        .user-message {
+            background: #D7EBBE;
+            align-self: flex-end;
+            border-top-right-radius: 0;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 1rem;
+            background: white;
+            border-top: 2px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #6c851b;
+            border-radius: 8px;
+            margin-right: 0.5rem;
+            font-family: 'Cooper Hewitt', sans-serif;
+        }
+
+        .chat-input button {
+            background: #6c851b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background: #ffbd59;
+        }
+
         #bot-ia {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 9999;
-            border-radius: 50px;
-            padding: 1rem;
-            font-size: 1rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: #6c851b;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 3px solid #333;
+        }
+
+        #bot-ia:hover {
+            background: #ffbd59;
+            transform: scale(1.1);
         }
 
         /* ANIMATIONS */
@@ -538,10 +749,35 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                border-top: 2px solid #6c851b;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .menu-toggle {
                 display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
             }
 
             .hero h1 {
@@ -586,6 +822,12 @@
                 width: 100%;
                 max-width: 300px;
             }
+
+            #chat-container {
+                width: 90%;
+                right: 5%;
+                bottom: 80px;
+            }
         }
 
         /* SMOOTH SCROLLING */
@@ -599,11 +841,12 @@
     <!-- HEADER -->
     <header>
         <nav>
-            <a href="#" class="logo" id="logo">ProPlástico</a>
+            <a href="#" class="logo" id="logo">Chereciclemos</a>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#acciones">Las 4 R's</a></li>
                 <li><a href="#estadisticas">Impacto</a></li>
+                <li><a href="#mapa">Puntos Verdes</a></li>
                 <li><a href="#accion">Únete</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
@@ -617,8 +860,8 @@
     <!-- HERO SECTION -->
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <h1>Plástico con propósito</h1>
-            <p class="hero-subtitle">Transformamos residuos en oportunidades para todxs. Del descarte al impacto social.</p>
+            <h1>Plástico con Conciencia</h1>
+            <p class="hero-subtitle">Transformamos residuos en oportunidades para todxs. Del descarte al impacto social colectivo.</p>
             <div class="hero-cta">
                 <a href="#acciones" class="btn">Descubre Cómo</a>
             </div>
@@ -656,7 +899,7 @@
 
     <!-- STATS SECTION -->
     <section class="stats animate-on-scroll" id="estadisticas">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Nuestro Impacto Juntos</h2>
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; font-family: 'Anton', sans-serif; letter-spacing: 1px;">Nuestro Impacto Juntos</h2>
         <div class="stats-grid">
             <div class="stat-item">
                 <span class="stat-number" data-count="85">0</span>
@@ -681,7 +924,7 @@
     <section class="cta animate-on-scroll" id="accion">
         <h2>¿Listo para el Cambio?</h2>
         <p>Únete a nuestra comunidad y comienza tu viaje hacia un estilo de vida más sostenible y consciente</p>
-        <a href="#" class="btn" id="joinBtn">Comenzar Ahora</a>
+        <a href="#formulario" class="btn" id="joinBtn">Comenzar Ahora</a>
     </section>
 
     <!-- MAPA DE PUNTOS DE RECICLAJE -->
@@ -842,7 +1085,7 @@
 
     <!-- ONG DESTACADA -->
     <section class="ong-section animate-on-scroll" id="ongs">
-        <h2 class="section-title">ONGs que Apoyamos</h2>
+        <h2 class="section-title">ONG que puedes apoyar</h2>
         <div class="ong-card">
             <img src="https://fundaciongarrahan.org.ar/images/2022/garrahan-fundacion-logo.png" alt="Fundación Garrahan" class="ong-logo">
             <p>La Fundación Garrahan lidera el programa de reciclado de papel y plástico con un fuerte compromiso ambiental y social. Conocé su trabajo:</p>
@@ -879,8 +1122,26 @@
         <div class="footer-bottom">
             <p>&copy; 2025 ProPlástico. Construyendo un futuro sostenible juntos. 🌱</p>
         </div>
-        <button id="bot-ia" class="btn">🧠 Asistente IA</button>
     </footer>
+
+    <!-- CHAT IA -->
+    <button id="bot-ia">🤖</button>
+    
+    <div id="chat-container">
+        <div class="chat-header">
+            <h3>Asistente de Reciclaje</h3>
+            <button class="close-chat">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                ¡Hola! Soy tu asistente de reciclaje. ¿En qué puedo ayudarte hoy? 😊
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Escribe tu pregunta...">
+            <button id="send-btn">➤</button>
+        </div>
+    </div>
 
     <script>
         // Scroll animations
@@ -972,24 +1233,83 @@
             });
         }
 
-        // Bot IA button
+        // Chat IA functionality
         const botIA = document.getElementById('bot-ia');
-        if (botIA) {
-            botIA.addEventListener('click', function() {
-                alert('🤖 ¡Hola! Soy tu asistente virtual de ProPlástico. ¿En qué puedo ayudarte hoy?');
-            });
+        const chatContainer = document.getElementById('chat-container');
+        const closeChat = document.querySelector('.close-chat');
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Respuestas del bot
+        const botResponses = {
+            "hola": ["¡Hola! ¿En qué puedo ayudarte hoy?", "¡Hola! ¿Cómo estás? Dime en qué puedo ayudarte con el reciclaje."],
+            "reciclar": ["El reciclaje es clave para reducir residuos. ¿Qué material específico te interesa reciclar?", "Para reciclar, primero separa tus residuos en: papel, plástico, vidrio y metal. ¿Necesitas ubicar un punto de reciclaje cerca de ti?"],
+            "puntos verdes": ["Tenemos un mapa completo de puntos verdes en Buenos Aires. ¿Quieres que te ayude a encontrar el más cercano a tu ubicación?", "Los puntos verdes aceptan diferentes materiales. ¿Qué tipo de residuos necesitas reciclar?"],
+            "plástico": ["El plástico debe estar limpio y seco antes de reciclarlo. ¿Sabías que algunos plásticos no son reciclables? Los números 1 (PET) y 2 (HDPE) son los más fáciles de reciclar.", "Reduce el uso de plásticos de un solo uso. ¿Necesitas alternativas sostenibles?"],
+            "gracias": ["¡De nada! ¿Hay algo más en lo que pueda ayudarte?", "¡Es un placer ayudar! No dudes en preguntar si tienes más dudas sobre reciclaje."],
+            "default": ["Interesante pregunta. ¿Podrías ser más específico para que pueda ayudarte mejor?", "No estoy seguro de entender. ¿Podrías reformular tu pregunta sobre reciclaje o sostenibilidad?"]
+        };
+
+        // Función para obtener respuesta del bot
+        function getBotResponse(userMessage) {
+            userMessage = userMessage.toLowerCase();
+            
+            if (userMessage.includes('hola')) {
+                return botResponses.hola[Math.floor(Math.random() * botResponses.hola.length)];
+            } else if (userMessage.includes('reciclar')) {
+                return botResponses.reciclar[Math.floor(Math.random() * botResponses.reciclar.length)];
+            } else if (userMessage.includes('punto') || userMessage.includes('verde')) {
+                return botResponses["puntos verdes"][Math.floor(Math.random() * botResponses["puntos verdes"].length)];
+            } else if (userMessage.includes('plástico')) {
+                return botResponses.plástico[Math.floor(Math.random() * botResponses.plástico.length)];
+            } else if (userMessage.includes('gracias')) {
+                return botResponses.gracias[Math.floor(Math.random() * botResponses.gracias.length)];
+            } else {
+                return botResponses.default[Math.floor(Math.random() * botResponses.default.length)];
+            }
         }
 
-        // Join button
-        const joinBtn = document.getElementById('joinBtn');
-        if (joinBtn) {
-            joinBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector('#formulario').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Función para añadir mensaje al chat
+        function addMessage(message, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+
+        // Abrir/cerrar chat
+        botIA.addEventListener('click', () => {
+            chatContainer.classList.toggle('visible');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatContainer.classList.remove('visible');
+        });
+
+        // Enviar mensaje
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+                
+                // Simular "escribiendo..."
+                setTimeout(() => {
+                    const response = getBotResponse(message);
+                    addMessage(response, false);
+                }, 1000);
+            }
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
 
         // Header background on scroll
         let lastScrollY = window.scrollY;
