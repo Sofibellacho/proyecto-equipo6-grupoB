@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Huella Plástica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cooper+Hewitt:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cooper Hewitt', sans-serif;
+      background-color: #D7EBBE;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      text-align: center;
+      color: #6c851b;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    button {
+      background-color: #AEE66A;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 30px;
+      border-radius: 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .result span {
+      font-size: 24px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .tips {
+      margin-top: 30px;
+      background-color: #EBD1B8;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .tips h3 {
+      margin-top: 0;
+    }
+
+    .images {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .images img {
+      width: 100px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Calculadora de Huella Plástica</h1>
+    
+    <label>¿Cuántas botellas de plástico usás por semana?</label>
+    <input type="number" id="botellas" min="0" />
+
+    <label>¿Cuántas bolsas plásticas usás por semana?</label>
+    <input type="number" id="bolsas" min="0" />
+
+    <label>¿Cuántos envoltorios plásticos (snacks, galletas, etc.) usás por semana?</label>
+    <input type="number" id="envoltorios" min="0" />
+
+    <button onclick="calcularHuella()">Calcular huella plástica</button>
+
+    <div class="result" id="resultado"></div>
+
+    <div class="tips" id="consejos" style="display:none;">
+      <h3>🌱 Consejos para reducir tu huella:</h3>
+      <ul>
+        <li>Usá botella reutilizable.</li>
+        <li>Optá por bolsas de tela o biodegradables.</li>
+        <li>Comprá a granel para evitar envoltorios.</li>
+        <li>Participá en campañas de reciclaje.</li>
+      </ul>
+      <div class="images">
+        <img src="https://cdn-icons-png.flaticon.com/512/2909/2909763.png" alt="reciclaje">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048940.png" alt="planeta feliz">
+        <img src="https://cdn-icons-png.flaticon.com/512/4241/4241988.png" alt="niño reciclando">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calcularHuella() {
+      const botellas = parseInt(document.getElementById("botellas").value) || 0;
+      const bolsas = parseInt(document.getElementById("bolsas").value) || 0;
+      const envoltorios = parseInt(document.getElementById("envoltorios").value) || 0;
+
+      const kgBotellas = botellas * 0.03 * 52;
+      const kgBolsas = bolsas * 0.01 * 52;
+      const kgEnvoltorios = envoltorios * 0.005 * 52;
+
+      const total = (kgBotellas + kgBolsas + kgEnvoltorios).toFixed(2);
+      let escala = "";
+
+      if (total < 5) {
+        escala = "🟢 Baja";
+      } else if (total < 15) {
+        escala = "🟡 Media";
+      } else {
+        escala = "🔴 Alta";
+      }
+
+      document.getElementById("resultado").innerHTML = `
+        Tu huella plástica anual estimada es: 
+        <span>${total} kg</span>
+        Nivel de impacto: <strong>${escala}</strong>
+      `;
+
+      document.getElementById("consejos").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
