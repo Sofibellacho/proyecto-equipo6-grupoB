@@ -513,35 +513,76 @@
             min-height: 120px;
         }
 
-        /* ONG SECTION */
+        /* ONG SECTION - ESTILOS MEJORADOS */
         .ong-section {
             padding: 5rem 2rem;
             background: white;
+            position: relative;
         }
-
-        .ong-card {
-            max-width: 600px;
+        
+        .ong-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
+        }
+        
+        .ong-card {
             background: #f8f9fa;
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: 10px 10px 0 #EBD1B8;
+            text-align: center;
+            box-shadow: 8px 8px 0 #EBD1B8;
             border: 2px solid #333;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
+        
+        .ong-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 12px 12px 0 #D7EBBE;
+        }
+        
         .ong-logo {
-            max-width: 200px;
+            max-width: 150px;
             height: auto;
-            margin-bottom: 2rem;
-            filter: drop-shadow(5px 5px 0 #D7EBBE);
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(3px 3px 0 #D7EBBE);
+            transition: transform 0.3s ease;
         }
-
+        
+        .ong-card:hover .ong-logo {
+            transform: scale(1.05);
+        }
+        
+        .ong-card h3 {
+            color: #6c851b;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+        }
+        
         .ong-card p {
-            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .ong-card .btn {
+            margin-top: auto;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            /* ... (otros estilos responsive) ... */
+            .ong-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* FOOTER */
@@ -841,7 +882,10 @@
     <!-- HEADER -->
     <header>
         <nav>
-            <a href="#" class="logo" id="logo">Chereciclemos</a>
+              <div class="logo-container">
+                <img src="che reciclemos.png" alt="che reciclemos" class="logo-img">
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#acciones">Las 4 R's</a></li>
@@ -948,7 +992,7 @@
 
         <!-- Mapa integrado -->
         <div class="mapa-container">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1F7TtOM_m7Gc-bhu1W8UGVaLO0AdsdXzW" width="100%" height="480" loading="lazy"></iframe>
+            <iframe src="map.html" width="100%" height="480" loading="lazy"></iframe>
         </div>
 
         <!-- Lista de Puntos Verdes por Comuna -->
@@ -1083,13 +1127,37 @@
         </form>
     </section>
 
-    <!-- ONG DESTACADA -->
+       <!-- ONGs DESTACADAS -->
     <section class="ong-section animate-on-scroll" id="ongs">
-        <h2 class="section-title">ONG que puedes apoyar</h2>
-        <div class="ong-card">
-            <img src="https://fundaciongarrahan.org.ar/images/2022/garrahan-fundacion-logo.png" alt="Fundación Garrahan" class="ong-logo">
-            <p>La Fundación Garrahan lidera el programa de reciclado de papel y plástico con un fuerte compromiso ambiental y social. Conocé su trabajo:</p>
-            <a href="https://fundaciongarrahan.org.ar/reciclado-y-medioambiente/" target="_blank" class="btn">Visitar Fundación</a>
+        <h2 class="section-title">ONGs que en los que podes reciclar y hacer un cambio 💚</h2>
+        <div class="ongs-grid">
+            <div class="ong-card">
+                <div class="ong-icon">🏥</div>
+                <h3>Fundación Garrahan</h3>
+                <p>La Fundación Garrahan lidera el programa de reciclado de papel y plástico con un fuerte compromiso ambiental y social.</p>
+                <a href="https://fundaciongarrahan.org.ar/reciclado-y-medioambiente/" target="_blank" class="btn">Visitar Fundación</a>
+            </div>
+            
+            <div class="ong-card">
+                <div class="ong-icon">♻️</div>
+                <h3>CEMPRE</h3>
+                <p>Esta asociación civil promueve la gestión integral de residuos y la economía circular, generando conocimiento técnico y fomentando la educación ambiental.</p>
+                <a href="https://cemprearg.org/sitio/" target="_blank" class="btn">Visitar CEMPRE</a>
+            </div>
+            
+            <div class="ong-card">
+                <div class="ong-icon">👓</div>
+                <h3>Fundación Zambrano</h3>
+                <p>Se dedica a recibir y donar o reciclar anteojos en desuso, dándoles una segunda vida para ayudar a quienes los necesitan.</p>
+                <a href="#" class="btn">Conocer más</a>
+            </div>
+            
+            <div class="ong-card">
+                <div class="ong-icon">💻</div>
+                <h3>Fundación Equidad</h3>
+                <p>Trabaja en el reciclaje de computadoras y otros equipos electrónicos para donarlos a instituciones que lo necesitan.</p>
+                <a href="#" class="btn">Conocer más</a>
+            </div>
         </div>
     </section>
 
@@ -1097,13 +1165,14 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>ProPlástico</h3>
-                <p>Construyendo un futuro sostenible a través de acciones conscientes y educación ambiental para toda la comunidad.</p>
+                <h3>che reciclemos</h3>
+                <p>Imaginamos una provincia donde cada escuela, cada hogar y cada municipio tenga el poder de reducir su huella plástica. Donde la transparencia en la gestión de residuos sea la norma y no la excepción. Donde las comunidades no solo sepan cómo disponer del plástico, sino cómo evitar que entre en sus vidas. Este futuro empieza hoy, con información accesible y acciones colectivas.
+.</p>
             </div>
             <div class="footer-section">
                 <h3>Recursos</h3>
                 <p><a href="#">Guías de Sostenibilidad</a></p>
-                <p><a href="#">Calculadora de Huella</a></p>
+                <p><a href="huella.html">Calculadora de Huella</a></p>
                 <p><a href="#">Talleres Online</a></p>
             </div>
             <div class="footer-section">
